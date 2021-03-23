@@ -1,3 +1,5 @@
+
+
 """
 @author: Equipo Dinamita
 """
@@ -24,7 +26,7 @@ graph = {
 }
 
 
-def BFS(graph, start):
+def BFS(graph, start, find):
     visited = []
     queue = [start]
 
@@ -34,9 +36,10 @@ def BFS(graph, start):
             if not neighbor in visited:
                 queue.insert(0,neighbor)
         visited.append(current)
-
+        if(current == find):
+            break
         
     return visited
 
 
-print(BFS(graph, 'H'))
+print(BFS(graph, 'H', 'J'))
